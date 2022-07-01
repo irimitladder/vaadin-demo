@@ -1,0 +1,113 @@
+@import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');
+
+:root {
+    --bg-color-0: white;
+    --bg-color-1: #f4f1ea;
+    --bg-color-2: #ffd666;
+    --bg-color-3: #382110;
+    --border: 1px solid #e4e4e4;
+}
+
+#content_container,
+#content_container * {
+    box-sizing: border-box;
+}
+
+#content_dashboard {
+    position: absolute;
+    left: 270px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: var(--bg-color-0);
+}
+
+.content_empty_dashboard.content_dashboard_lowlighted {
+    background: var(--bg-color-2);
+}
+
+.content_dashboard_lowlighted *.content_block_outer_segment {
+    background: var(--bg-color-2);
+}
+
+.content_dashboard_lowlighted *.content_block_inner_segment {
+    background: var(--bg-color-3) !important;
+}
+
+.content_dashboard_lowlighted *.content_block_outer_segment.content_block_inner_segment {
+    background: none !important;
+}
+
+.content_block {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    column-gap: 0;
+}
+
+.content_block_left_highlighted *.content_block_left_segment,
+.content_block_right_highlighted *.content_block_right_segment,
+.content_block_top_highlighted *.content_block_top_segment,
+.content_block_bottom_highlighted *.content_block_bottom_segment {
+    background: var(--bg-color-3);
+}
+
+/* Big containers within every content block */
+.content_block > * {
+    display: flex;
+    flex: 1;
+    column-gap: 0;
+}
+
+.content_block > *:first-child,
+.content_block > *:last-child {
+    flex: 0 18px;
+}
+
+/* Small containers within every content block */
+.content_block > *:first-child > *,
+.content_block > *:last-child > * {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.content_block > *:first-child > *:first-child,
+.content_block > *:first-child > *:last-child,
+.content_block > *:last-child > *:first-child,
+.content_block > *:last-child > *:last-child {
+    display: block;
+    flex: 0 18px;
+}
+
+.content_block_outer_segment,
+.content_block_inner_segment {
+    flex: 0 9px;
+}
+
+.content_block_central_segment {
+    flex: 1;
+    background: var(--bg-color-1);
+    border: var(--border);
+}
+
+#content_panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 270px;
+    height: 100%;
+    background: var(--bg-color-1);
+    border-right: var(--border);
+    padding: 18px;
+}
+
+#content_block {
+    height: 240px;
+    background: var(--bg-color-2);
+    border: var(--border);
+}
+
+#content_block:hover {
+    background: var(--bg-color-3);
+}
